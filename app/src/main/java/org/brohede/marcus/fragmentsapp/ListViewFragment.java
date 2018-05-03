@@ -39,16 +39,10 @@ public class ListViewFragment extends android.app.Fragment {
         MainActivity activity = (MainActivity) getActivity();
         List mountainList = activity.getMountainList();
 
-
-        Log.d("hiho", "Added data");
-        Log.d("hiho", mountainList.toString());
-
-        //ArrayAdapter adapter = new ArrayAdapter(getActivity(), R.layout.list_item_textview, R.id.mountain_name, mountainList);
         final MountainAdapter adapter = new MountainAdapter(getActivity(), (ArrayList<Mountain>) mountainList);
         myListView = (ListView) view.findViewById(R.id.listView);
         myListView.setAdapter(adapter);
 
-        Log.d("hiho", "return view");
 
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -61,8 +55,7 @@ public class ListViewFragment extends android.app.Fragment {
                 extras.putString("mountain_name", mountain.getName());
                 extras.putString("mountain_location", mountain.getLocation());
                 extras.putString("mountain_height", Integer.toString(mountain.getHeight()));
-
-                Log.d("hiho", "Clicked item");
+                extras.putString("mountain_image", mountain.getImage());
 
                 fragment.setArguments(extras);
 
