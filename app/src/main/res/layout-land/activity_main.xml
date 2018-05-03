@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.brohede.marcus.fragmentsapp.MainActivity"
-    android:id="@+id/container">
+    >
 
     <LinearLayout
         android:layout_width="576dp"
@@ -20,21 +20,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp">
 
-        <fragment
-            android:id="@+id/details"
-            android:name="org.brohede.marcus.fragmentsapp.MountainDetailsFragment"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:layout="@layout/fragment_mountain_details" />
+            android:layout_height="match_parent"
+            android:id="@id/fragment_container">
+            
+        </FrameLayout>
 
-        <fragment
-            android:name="org.brohede.marcus.fragmentsapp.ListViewFragment"
-            android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            tools:layout="@layout/list_view" />
 
     </LinearLayout>
 

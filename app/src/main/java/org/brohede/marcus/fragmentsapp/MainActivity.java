@@ -165,13 +165,9 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
 
-            /*
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            ListViewFragment listView = (ListViewFragment)getSupportFragmentManager().findFragmentById(R.id.list);
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.list, listView);
-            fragmentTransaction.commit();
-            */
+            ListViewFragment fragment = new ListViewFragment();
+            fragment.setArguments(getIntent().getExtras());
+            getFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
 
 
