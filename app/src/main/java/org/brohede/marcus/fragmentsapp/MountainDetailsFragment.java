@@ -7,11 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
-
-
-public class MountainDetailsFragment extends Fragment {
+public class MountainDetailsFragment extends android.app.Fragment {
 
 
     public MountainDetailsFragment() {
@@ -21,8 +20,18 @@ public class MountainDetailsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mountain_details, container, false);
+        View view = inflater.inflate(R.layout.fragment_mountain_details, container, false);
+
+        TextView nameText = view.findViewById(R.id.mtn_name);
+        nameText.setText(getArguments().getString("mountain_name"));
+
+        TextView LocationText = view.findViewById(R.id.mtn_location);
+        LocationText.setText(getArguments().getString("mountain_location"));
+
+        TextView HeightText = view.findViewById(R.id.mtn_height);
+        HeightText.setText(getArguments().getString("mountain_height"));
+
+        return view;
     }
 
 }
